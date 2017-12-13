@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
 
     public static void declineCoupon(MainActivity activity, String url){
         declined.add(url);
+        if(url.equals("https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+6.jpg")){
+            activity.changeFragment("wallet");
+            //ImageView l = (ImageView) activity.findViewById(R.id.background);
+            //l.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
