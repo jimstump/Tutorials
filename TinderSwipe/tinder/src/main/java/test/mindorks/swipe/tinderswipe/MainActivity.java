@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
 
-    static List<String> accepted;
-    static List<String> declined;
+    static List<String> accepted = new ArrayList<>();
+    static List<String> declined = new ArrayList<>();
 
     public static void acceptCoupon(String url){
         accepted.add(url);
