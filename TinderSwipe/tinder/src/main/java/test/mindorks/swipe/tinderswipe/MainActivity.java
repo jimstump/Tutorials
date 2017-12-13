@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -14,7 +15,9 @@ import com.mindorks.placeholderview.SwipePlaceHolderView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import test.mindorks.swipe.tinderswipe.dummy.DummyContent;
+
+public class MainActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
 
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
@@ -36,22 +39,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         changeFragment("tinder");
+        //changeFragment("wallet");
     }
 
     protected void changeFragment(String fragment) {
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction mFragmentTransaction =  mFragmentManager.beginTransaction();
+        Fragment frag;
+
         switch (fragment) {
             case "tinder":
-
-                FragmentManager mFragmentManager = getSupportFragmentManager();
-                FragmentTransaction mFragmentTransaction =  mFragmentManager.beginTransaction();
-
-                Fragment frag = TinderFragment.newInstance();
+                frag = TinderFragment.newInstance();
 
                 mFragmentTransaction.replace(R.id.root_container, frag, "tinder");
                 mFragmentTransaction.addToBackStack("tinder");
-                mFragmentTransaction.commit();
+                break;
+
+            case "wallet":
+                frag = ItemFragment.newInstance();
+
+                mFragmentTransaction.replace(R.id.root_container, frag, "wallet");
+                mFragmentTransaction.addToBackStack("wallet");
                 break;
         }
+
+        mFragmentTransaction.commit();
+    }
+
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        Log.d("foo", item.toString());
     }
 
 }
