@@ -38,6 +38,14 @@ public class ItemFragment extends Fragment {
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
+
+    public static ItemFragment newInstance() {
+        ItemFragment fragment = new ItemFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_COLUMN_COUNT, 1);
+        fragment.setArguments(args);
+        return fragment;
+    }
     public static ItemFragment newInstance(int columnCount) {
         ItemFragment fragment = new ItemFragment();
         Bundle args = new Bundle();
