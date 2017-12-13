@@ -32,12 +32,6 @@ public class TinderCard {
     @View(R.id.profileImageView)
     private ImageView profileImageView;
 
-    @View(R.id.nameAgeTxt)
-    private TextView nameAgeTxt;
-
-    @View(R.id.locationNameTxt)
-    private TextView locationNameTxt;
-
     @SwipeView
     private android.view.View cardView;
 
@@ -62,8 +56,6 @@ public class TinderCard {
         Glide.with(mContext).load(mProfile.getImageUrl())
                 .bitmapTransform(multi)
                 .into(profileImageView);
-        nameAgeTxt.setText(mProfile.getName() + ", " + mProfile.getAge());
-        locationNameTxt.setText(mProfile.getLocation());
     }
 
     @SwipeHead

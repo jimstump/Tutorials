@@ -1,0 +1,32 @@
+[  
+   {  
+      "url":"https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+1.jpg",
+      "name":"Sofia",
+      "age":20,
+      "location":"New York"
+   },
+   {  
+      "url":"https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+2.jpg",
+      "name":"Roma",
+      "age":22,
+      "location":"California"
+   },
+   {  
+      "url":"https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+3.jpg",
+      "name":"Zoya",
+      "age":23,
+      "location":"Atlantic City"
+   },
+   {  
+      "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/january/pretty_girls_2/pretty_girls_5.jpg",
+      "name":"Carol",
+      "age":19,
+      "location":"New City"
+   },
+   {  
+      "url":"https://i.pinimg.com/originals/f0/86/85/f086855181d270cd25eacf12e668a93a.jpg",
+      "name":"SDF",
+      "age":21,
+      "location":"America"
+   }
+]
