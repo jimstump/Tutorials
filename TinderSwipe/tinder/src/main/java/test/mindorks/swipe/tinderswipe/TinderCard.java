@@ -78,7 +78,7 @@ public class TinderCard {
     private void onSwipedOut(){
         Log.d("EVENT", "onSwipedOut");
 //        mSwipeView.addView(this);
-        MainActivity.declineCoupon(mProfile.getName());
+        MainActivity.declineCoupon(mProfile.getImageUrl());
     }
 
     @SwipeCancelState
@@ -89,7 +89,7 @@ public class TinderCard {
     @SwipeIn
     private void onSwipeIn(){
         Log.d("EVENT", "onSwipedIn");
-        MainActivity.acceptCoupon(mProfile.getName());
+        MainActivity.acceptCoupon(mProfile.getImageUrl());
     }
 
     @SwipeInState
