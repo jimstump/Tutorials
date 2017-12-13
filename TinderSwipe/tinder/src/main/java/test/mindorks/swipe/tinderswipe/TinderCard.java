@@ -1,5 +1,6 @@
 package test.mindorks.swipe.tinderswipe;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.widget.ImageView;
@@ -39,10 +40,13 @@ public class TinderCard {
     private Context mContext;
     private SwipePlaceHolderView mSwipeView;
 
-    public TinderCard(Context context, Profile profile, SwipePlaceHolderView swipeView) {
+    MainActivity activity;
+
+    public TinderCard(Context context, Profile profile, SwipePlaceHolderView swipeView, MainActivity activity) {
         mContext = context;
         mProfile = profile;
         mSwipeView = swipeView;
+        this.activity = activity;
     }
 
     @Resolve
@@ -78,7 +82,7 @@ public class TinderCard {
     private void onSwipedOut(){
         Log.d("EVENT", "onSwipedOut");
 //        mSwipeView.addView(this);
-        MainActivity.declineCoupon(mProfile.getImageUrl());
+        MainActivity.declineCoupon(activity, mProfile.getImageUrl());
     }
 
     @SwipeCancelState
@@ -89,7 +93,7 @@ public class TinderCard {
     @SwipeIn
     private void onSwipeIn(){
         Log.d("EVENT", "onSwipedIn");
-        MainActivity.acceptCoupon(mProfile.getImageUrl());
+        MainActivity.acceptCoupon(activity,mProfile.getImageUrl());
     }
 
     @SwipeInState

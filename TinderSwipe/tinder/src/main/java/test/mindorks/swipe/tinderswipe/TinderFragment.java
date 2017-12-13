@@ -75,7 +75,7 @@ public class TinderFragment extends Fragment {
 
 
         for(Profile profile : Utils.loadProfiles(getActivity().getApplicationContext())){
-            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView));
+            mSwipeView.addView(new TinderCard(mContext, profile, mSwipeView, (MainActivity)getActivity()));
         }
 
         getActivity().findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
