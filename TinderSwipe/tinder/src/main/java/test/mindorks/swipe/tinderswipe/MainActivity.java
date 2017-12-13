@@ -1,5 +1,6 @@
 package test.mindorks.swipe.tinderswipe;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.support.v4.app.Fragment;
@@ -25,11 +26,14 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
     static List<String> accepted = new ArrayList<>();
     static List<String> declined = new ArrayList<>();
 
-    public static void acceptCoupon(String url){
+    public static void acceptCoupon(MainActivity activity, String url){
         accepted.add(url);
+        if(url.equals("https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+6.jpg")){
+            activity.changeFragment("wallet");
+        }
     }
 
-    public static void declineCoupon(String url){
+    public static void declineCoupon(MainActivity activity, String url){
         declined.add(url);
     }
 
