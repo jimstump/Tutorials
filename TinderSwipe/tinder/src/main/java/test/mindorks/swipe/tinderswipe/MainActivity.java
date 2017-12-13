@@ -3,12 +3,16 @@ package test.mindorks.swipe.tinderswipe;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
+import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements ItemFragment.OnLi
         accepted.add(url);
         if(url.equals("https://s3.amazonaws.com/jcpsyfboltsession2017/JCP+Coupon+6.jpg")){
             activity.changeFragment("wallet");
+            //ImageView l = (ImageView) activity.findViewById(R.id.background);
+            //l.setVisibility(View.VISIBLE);
         }
     }
 
