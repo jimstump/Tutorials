@@ -10,10 +10,23 @@ import android.view.View;
 import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private SwipePlaceHolderView mSwipeView;
     private Context mContext;
+
+    static List<String> accepted;
+    static List<String> declined;
+
+    public static void acceptCoupon(String url){
+        accepted.add(url);
+    }
+
+    public static void declineCoupon(String url){
+        declined.add(url);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
